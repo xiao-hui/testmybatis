@@ -6,12 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public class ServiceImpl implements IService{
-	@Override  
-    public String getString(String msg) {  
+	public String getString(String msg) {  
         return "hello : " + msg;  
     }  
   
-    @Override  
     public Map<String, Object> getMap(String map) {  
         Map<String, Object> testMap = new HashMap<String, Object>();  
         testMap.put("m1", 1);  
@@ -28,7 +26,6 @@ public class ServiceImpl implements IService{
     /* (non-Javadoc) 
      * @see test.IService#getCar() 
      */  
-    @Override  
     public Car getCar() {  
         Car c = new Car();  
         c.setName("zhuc-httpinvoker-car");  

@@ -17,5 +17,16 @@
             </list>  
         </property>  
     </bean>  
+    <!-- 客户端Hessian代理工厂Bean -->  
+    <bean id="clientSpring" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">  
+        <!-- 请求代理Servlet路径 -->          
+        <property name="serviceUrl">  
+			<value>http://localhost:8080/testmybatis/remote/helloSpring</value>  
+        </property>  
+        <!-- 接口定义 -->  
+        <property name="serviceInterface">  
+            <value>com.wtang.isay.Isay</value>  
+        </property>  
+    </bean>  
   
 </beans>  

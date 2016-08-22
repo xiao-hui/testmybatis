@@ -21,4 +21,15 @@
         </property>  
     </bean>  
     <!-- 此处将url映射为 remote.convert.service -->  
+    
+     <!-- 接口的具体实现类 -->  
+    <bean id="impl" class="com.wtang.isay.IsayImpl" />  
+    <!-- 使用Spring的HessianServie做代理 -->  
+    <bean name="/helloSpring"  
+    class="org.springframework.remoting.caucho.HessianServiceExporter">  
+        <!-- service引用具体的实现实体Bean-->  
+        <property name="service" ref="impl" />  
+        <property name="serviceInterface" value="com.wtang.isay.Isay" />  
+    </bean>  
+    
 </beans>  
